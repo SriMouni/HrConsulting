@@ -12,8 +12,8 @@
   <meta property="og:site_name" content="Sri Guru HR Consultants" />
   <meta property="og:title" content="Sri Guru HR Consultants | Specialists in Workforce Optimisation" />
   <meta property="og:description" content="The right person, in the right job, at the right time. Talent hunt, industrial licences and permissions, training and skill development, and OD intervention in Hyderabad." />
-  <meta property="og:url" content="https://www.sriguruhrconsultants.com/" />
-  <meta property="og:image" content="https://www.sriguruhrconsultants.com/assets/og-image.jpg" />
+  <meta property="og:url" content="https://srimouni.github.io/HrConsulting/" />
+  <meta property="og:image" content="https://srimouni.github.io/HrConsulting/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Sri Guru HR Consultants: the right person, in the right job, at the right time." />
@@ -35,15 +35,37 @@
 </head>
 <body>
 
-  <!-- Brand mark, reused across the page; colours follow the active theme -->
+  <!-- Brand mark, reused across the page -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="mark" viewBox="0 0 64 64">
-      <g style="stroke:var(--sun-ray)" stroke-width="3" stroke-linecap="round">
-        <path d="M44 20.5l2.3-3.2M49.3 27.7l3.8-1.3M49.3 36.3l3.8 1.3M44 43.5l2.3 3.2"/>
+    <defs>
+    <path id="sg-body-c" d="M38 63C38 44 42.5 36.8 50 36.8S62 44 62 63z"/>
+    <path id="sg-body-l" d="M19 63C19 50 24 44 31.8 44S44.6 50 44.6 63z"/>
+    <path id="sg-body-r" d="M55.4 63.5C55.4 50 60 44 67.4 44S79.6 50 79.6 58.5z"/>
+    <path id="sg-band" d="M16.8 53.2C9.5 56.8 8.5 63 20 66.2C33 69.6 60 67.8 74 61.2C81 57.8 86 52 89.4 43.8L86.4 42.1C82 51 77 55.6 70 58.6C57 63.8 33 64.2 22 62.2C15 60.8 12.8 57.3 16.8 53.2z"/>
+    <mask id="sg-gap-center" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff"/>
+      <use href="#sg-body-l" fill="#000" stroke="#000" stroke-width="2.6"/>
+      <use href="#sg-body-r" fill="#000" stroke="#000" stroke-width="2.6"/>
+    </mask>
+    <mask id="sg-gap-band" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff"/>
+      <use href="#sg-band" fill="#000" stroke="#000" stroke-width="3"/>
+    </mask>
+    </defs>
+    <symbol id="mark" viewBox="7 17 91 72">
+    <g mask="url(#sg-gap-band)">
+      <g mask="url(#sg-gap-center)" fill="#4fa3e0">
+        <circle cx="49.6" cy="27.4" r="8.3"/>
+        <use href="#sg-body-c"/>
       </g>
-      <circle cx="36" cy="32" r="9" style="fill:var(--sun)"/>
-      <path d="M46 8C28 8 13 18 13 32s15 24 33 24C32 52 21 44 21 32s11-20 25-24z" style="fill:var(--swoosh-blue)"/>
-      <path d="M9 38c2 14 16 23 34 22C27 57 15 50 11 40z" style="fill:var(--swoosh-red)"/>
+      <circle cx="32.3" cy="36.4" r="7.3" fill="#5ec2bb"/>
+      <use href="#sg-body-l" fill="#5ec2bb"/>
+      <circle cx="67.6" cy="36.4" r="7.3" fill="#f7ae6c"/>
+      <use href="#sg-body-r" fill="#f7ae6c"/>
+      <path fill-rule="evenodd" fill="#4fa3e0" d="M12.5 65C30 69.5 55 70 70 66.5C78 64 83 59 87 59.2C89.6 59.4 89 63 85.5 66.5C78 74.5 66 84.5 48 86C30 87 16 77.5 12.5 65zM51 76C58 70.8 65 69.2 72.5 69.8C65 71.4 58 73.2 51 76z"/>
+    </g>
+    <use href="#sg-band" fill="#f39a55"/>
+    <path d="M95.5 35.3L84.4 41.6L95 47.6z" fill="#f39a55"/>
     </symbol>
   </svg>
 
@@ -119,11 +141,11 @@
                 <stop offset="1" style="stop-color:var(--art-orb-2)"/>
               </linearGradient>
               <linearGradient id="g-sun" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#ffd27a"/>
-                <stop offset="1" stop-color="#f5a623"/>
+                <stop offset="0" stop-color="#ffc896"/>
+                <stop offset="1" stop-color="#f39a55"/>
               </linearGradient>
               <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
-                <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0b1a45" flood-opacity="0.16"/>
+                <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#173f73" flood-opacity="0.16"/>
               </filter>
             </defs>
 
@@ -135,7 +157,7 @@
             <!-- Rising sun and swoosh horizon -->
             <g class="art-sun">
               <circle cx="410" cy="92" r="34" fill="url(#g-sun)"/>
-              <g stroke="#f5b83d" stroke-width="5" stroke-linecap="round">
+              <g stroke="#f39a55" stroke-width="5" stroke-linecap="round">
                 <path d="M410 36v-12M370 52l-8-8M450 52l8-8M354 92h-12M466 92h12"/>
               </g>
             </g>
@@ -153,17 +175,17 @@
             <g class="art-node n1">
               <circle cx="100" cy="132" r="30" style="fill:var(--art-card)" filter="url(#soft)"/>
               <circle cx="100" cy="124" r="9" fill="#8d5a3b"/>
-              <path d="M84 148c2-10 9-14 16-14s14 4 16 14" fill="#3d9be0"/>
+              <path d="M84 148c2-10 9-14 16-14s14 4 16 14" fill="#4fa3e0"/>
             </g>
             <g class="art-node n2">
               <circle cx="80" cy="304" r="26" style="fill:var(--art-card)" filter="url(#soft)"/>
               <circle cx="80" cy="297" r="8" fill="#c68a5e"/>
-              <path d="M66 318c2-9 8-12 14-12s12 3 14 12" fill="#ef4b63"/>
+              <path d="M66 318c2-9 8-12 14-12s12 3 14 12" fill="#5ec2bb"/>
             </g>
             <g class="art-node n3">
               <circle cx="456" cy="304" r="28" style="fill:var(--art-card)" filter="url(#soft)"/>
               <circle cx="456" cy="296" r="8.5" fill="#6b4226"/>
-              <path d="M441 319c2-9 8-13 15-13s13 4 15 13" fill="#f5b83d"/>
+              <path d="M441 319c2-9 8-13 15-13s13 4 15 13" fill="#f39a55"/>
             </g>
 
             <!-- Matched candidate card -->
@@ -177,15 +199,15 @@
               <rect x="256" y="208" width="92" height="10" rx="5" style="fill:var(--art-text)"/>
               <rect x="256" y="226" width="62" height="8" rx="4" style="fill:var(--art-muted)"/>
               <rect x="202" y="262" width="156" height="8" rx="4" style="fill:var(--art-muted)"/>
-              <rect x="202" y="262" width="122" height="8" rx="4" fill="#3d9be0"/>
+              <rect x="202" y="262" width="122" height="8" rx="4" fill="#4fa3e0"/>
               <rect x="202" y="280" width="156" height="8" rx="4" style="fill:var(--art-muted)"/>
-              <rect x="202" y="280" width="140" height="8" rx="4" fill="#f5b83d"/>
-              <rect x="202" y="300" width="72" height="18" rx="9" fill="#16a34a" opacity="0.15"/>
-              <path d="M211 309l4 4 7-8" stroke="#16a34a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="228" y="305" width="38" height="7" rx="3.5" fill="#16a34a" opacity="0.7"/>
+              <rect x="202" y="280" width="140" height="8" rx="4" fill="#5ec2bb"/>
+              <rect x="202" y="300" width="72" height="18" rx="9" fill="#2f9d95" opacity="0.15"/>
+              <path d="M211 309l4 4 7-8" stroke="#2f9d95" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="228" y="305" width="38" height="7" rx="3.5" fill="#2f9d95" opacity="0.7"/>
             </g>
             <g class="art-badge">
-              <circle cx="374" cy="186" r="20" fill="#16a34a"/>
+              <circle cx="374" cy="186" r="20" fill="#2f9d95"/>
               <path d="M365 186l6 6 12-12" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </g>
           </svg>

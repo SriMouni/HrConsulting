@@ -20,4 +20,4 @@ Open `index.html` in a browser. No build step is needed.
 
 Every push to `main` deploys the site to GitHub Pages via `.github/workflows/deploy.yml` (only `index.html`, `css/`, `js/` and `assets/` are published).
 One-time setup: repository **Settings → Pages → Source: GitHub Actions**.
-The link-preview tags in `index.html` assume the site lives at `https://www.sriguruhrconsultants.com/`; update them if it lives elsewhere.
+Live site: https://srimouni.github.io/HrConsulting/ — the link-preview tags (`og:url`, `og:image`) in `index.html` point there; update them when a custom domain is connected.

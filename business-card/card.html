@@ -18,6 +18,9 @@
       --crimson: #b3172e;
       --rose: #ef4b63;
       --gold: #f5b83d;
+      --orange: #f39a55;
+      --orange-dark: #c8621c;
+      --teal: #5ec2bb;
       --ink: #1f2a44;
       --muted: #5a6680;
     }
@@ -53,8 +56,8 @@
     /* ---------- Front ---------- */
     .front {
       background:
-        radial-gradient(circle at 85% 20%, rgba(245, 184, 61, 0.22), transparent 45%),
-        linear-gradient(140deg, var(--navy) 0%, var(--navy-2) 60%, var(--ocean) 100%);
+        radial-gradient(circle at 88% 12%, rgba(79, 163, 224, 0.35), transparent 45%),
+        linear-gradient(140deg, #173f73 0%, #2468a8 60%, #2a8f88 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -63,12 +66,14 @@
     .front .ghost {
       position: absolute;
       right: -0.55in;
-      top: -0.2in;
-      width: 2.4in;
-      opacity: 0.12;
+      bottom: -0.45in;
+      width: 1.6in;
+      height: 1.27in;
+      opacity: 0.1;
+      filter: brightness(0) invert(1);
     }
     .front .brand { position: relative; display: flex; align-items: center; gap: 0.12in; }
-    .front .brand svg { width: 0.78in; height: 0.78in; }
+    .front .brand svg { width: 0.95in; height: 0.75in; }
     .front .name {
       font-family: "Fraunces", Georgia, serif;
       font-weight: 600;
@@ -81,7 +86,7 @@
       font-size: 7.6px;
       font-weight: 700;
       letter-spacing: 0.32em;
-      color: var(--gold);
+      color: var(--orange);
     }
     .front .tagline {
       position: absolute;
@@ -100,7 +105,7 @@
       display: inline-block;
       width: 22px;
       height: 1px;
-      background: var(--gold);
+      background: var(--orange);
       vertical-align: middle;
       margin: 0 8px;
       opacity: 0.8;
@@ -114,15 +119,16 @@
     }
     .back .arcs {
       position: absolute;
-      right: -0.62in;
-      top: 50%;
-      transform: translateY(-50%) scaleX(-1);
-      width: 1.75in;
+      right: -0.4in;
+      bottom: -0.32in;
+      width: 1.45in;
+      height: 1.15in;
+      opacity: 0.13;
     }
     .back .head { display: flex; align-items: center; gap: 7px; }
-    .back .head svg { width: 26px; height: 26px; }
+    .back .head svg { width: 36px; height: 28px; }
     .back .head .n { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 12.5px; color: var(--navy); line-height: 1; }
-    .back .head .s { font-size: 5.2px; font-weight: 700; letter-spacing: 0.3em; color: var(--crimson); margin-top: 3px; }
+    .back .head .s { font-size: 5.2px; font-weight: 700; letter-spacing: 0.3em; color: var(--orange-dark); margin-top: 3px; }
 
     .back .person {
       margin-top: 0.13in;
@@ -135,7 +141,7 @@
       width: 34px;
       height: 2px;
       margin: 5px 0 9px;
-      background: linear-gradient(90deg, var(--ocean), var(--crimson), var(--gold));
+      background: linear-gradient(90deg, var(--sky), var(--teal), var(--orange));
       border-radius: 2px;
     }
     .back ul { list-style: none; display: grid; gap: 4.5px; }
@@ -144,36 +150,60 @@
       flex-shrink: 0;
       width: 13px; height: 13px;
       border-radius: 50%;
-      background: var(--navy);
+      background: #2468a8;
       display: grid;
       place-items: center;
     }
-    .back li .ic svg { width: 7.5px; height: 7.5px; fill: none; stroke: var(--gold); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .back li .ic svg { width: 7.5px; height: 7.5px; fill: none; stroke: var(--orange); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 
     .back .bar {
       position: absolute;
       left: 0; right: 0; bottom: 0;
       height: 4px;
-      background: linear-gradient(90deg, var(--navy), var(--ocean) 55%, var(--gold));
+      background: linear-gradient(90deg, #2468a8, var(--sky) 40%, var(--teal) 70%, var(--orange));
     }
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+    <path id="sg-body-c" d="M38 63C38 44 42.5 36.8 50 36.8S62 44 62 63z"/>
+    <path id="sg-body-l" d="M19 63C19 50 24 44 31.8 44S44.6 50 44.6 63z"/>
+    <path id="sg-body-r" d="M55.4 63.5C55.4 50 60 44 67.4 44S79.6 50 79.6 58.5z"/>
+    <path id="sg-band" d="M16.8 53.2C9.5 56.8 8.5 63 20 66.2C33 69.6 60 67.8 74 61.2C81 57.8 86 52 89.4 43.8L86.4 42.1C82 51 77 55.6 70 58.6C57 63.8 33 64.2 22 62.2C15 60.8 12.8 57.3 16.8 53.2z"/>
+    <mask id="sg-gap-center" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff"/>
+      <use href="#sg-body-l" fill="#000" stroke="#000" stroke-width="2.6"/>
+      <use href="#sg-body-r" fill="#000" stroke="#000" stroke-width="2.6"/>
+    </mask>
+    <mask id="sg-gap-band" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff"/>
+      <use href="#sg-band" fill="#000" stroke="#000" stroke-width="3"/>
+    </mask>
+    </defs>
+    <symbol id="mark" viewBox="7 17 91 72">
+    <g mask="url(#sg-gap-band)">
+      <g mask="url(#sg-gap-center)" fill="#4fa3e0">
+        <circle cx="49.6" cy="27.4" r="8.3"/>
+        <use href="#sg-body-c"/>
+      </g>
+      <circle cx="32.3" cy="36.4" r="7.3" fill="#5ec2bb"/>
+      <use href="#sg-body-l" fill="#5ec2bb"/>
+      <circle cx="67.6" cy="36.4" r="7.3" fill="#f7ae6c"/>
+      <use href="#sg-body-r" fill="#f7ae6c"/>
+      <path fill-rule="evenodd" fill="#4fa3e0" d="M12.5 65C30 69.5 55 70 70 66.5C78 64 83 59 87 59.2C89.6 59.4 89 63 85.5 66.5C78 74.5 66 84.5 48 86C30 87 16 77.5 12.5 65zM51 76C58 70.8 65 69.2 72.5 69.8C65 71.4 58 73.2 51 76z"/>
+    </g>
+    <use href="#sg-band" fill="#f39a55"/>
+    <path d="M95.5 35.3L84.4 41.6L95 47.6z" fill="#f39a55"/>
+    </symbol>
+  </svg>
 
   <!-- FRONT -->
   <section class="card front">
-    <svg class="ghost" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M46 8C28 8 13 18 13 32s15 24 33 24C32 52 21 44 21 32s11-20 25-24z" fill="#fff"/>
-      <path d="M9 38c2 14 16 23 34 22C27 57 15 50 11 40z" fill="#fff"/>
-    </svg>
+    <svg class="ghost" aria-hidden="true"><use href="#mark"/></svg>
 
     <div class="brand">
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <g stroke="#f5b83d" stroke-width="3" stroke-linecap="round"><path d="M44 20.5l2.3-3.2M49.3 27.7l3.8-1.3M49.3 36.3l3.8 1.3M44 43.5l2.3 3.2"/></g>
-        <circle cx="36" cy="32" r="9" fill="#f5b83d"/>
-        <path d="M46 8C28 8 13 18 13 32s15 24 33 24C32 52 21 44 21 32s11-20 25-24z" fill="#3d9be0"/>
-        <path d="M9 38c2 14 16 23 34 22C27 57 15 50 11 40z" fill="#ef4b63"/>
-      </svg>
+      <svg aria-hidden="true"><use href="#mark"/></svg>
       <div>
         <div class="name">Sri Guru</div>
         <div class="sub">HR CONSULTANTS</div>
@@ -185,18 +215,10 @@
 
   <!-- BACK -->
   <section class="card back">
-    <svg class="arcs" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M46 8C28 8 13 18 13 32s15 24 33 24C32 52 21 44 21 32s11-20 25-24z" fill="#0b5d8f"/>
-      <path d="M9 38c2 14 16 23 34 22C27 57 15 50 11 40z" fill="#b3172e"/>
-    </svg>
+    <svg class="arcs" aria-hidden="true"><use href="#mark"/></svg>
 
     <div class="head">
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <g stroke="#e9a524" stroke-width="3" stroke-linecap="round"><path d="M44 20.5l2.3-3.2M49.3 27.7l3.8-1.3M49.3 36.3l3.8 1.3M44 43.5l2.3 3.2"/></g>
-        <circle cx="36" cy="32" r="9" fill="#f5b83d"/>
-        <path d="M46 8C28 8 13 18 13 32s15 24 33 24C32 52 21 44 21 32s11-20 25-24z" fill="#0b5d8f"/>
-        <path d="M9 38c2 14 16 23 34 22C27 57 15 50 11 40z" fill="#b3172e"/>
-      </svg>
+      <svg aria-hidden="true"><use href="#mark"/></svg>
       <div>
         <div class="n">Sri Guru</div>
         <div class="s">HR CONSULTANTS</div>
