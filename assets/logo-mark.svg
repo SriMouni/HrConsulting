@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Sri Guru mark: the sun (guidance) embraced on the left by the blue and red swoosh from the original card -->
+  <rect width="64" height="64" rx="16" fill="#12245c"/>
+  <g transform="translate(5 2) scale(0.9)">
+    <g stroke="#f5b83d" stroke-width="3" stroke-linecap="round"><path d="M44 20.5l2.3-3.2M49.3 27.7l3.8-1.3M49.3 36.3l3.8 1.3M44 43.5l2.3 3.2"/></g>
+    <circle cx="36" cy="32" r="9" fill="#f5b83d"/>
+    <path d="M46 8C28 8 13 18 13 32s15 24 33 24C32 52 21 44 21 32s11-20 25-24z" fill="#3d9be0"/>
+    <path d="M9 38c2 14 16 23 34 22C27 57 15 50 11 40z" fill="#ef4b63"/>
+  </g>
+</svg>
