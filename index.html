@@ -149,20 +149,12 @@
               </filter>
             </defs>
 
+            <g transform="translate(270 250) scale(0.82) translate(-270 -250)">
             <!-- Backdrop -->
             <circle cx="270" cy="250" r="210" fill="url(#g-orb)"/>
             <circle cx="270" cy="250" r="160" fill="none" style="stroke:var(--art-ring)" stroke-width="1.5" stroke-dasharray="4 8"/>
             <circle cx="270" cy="250" r="230" fill="none" style="stroke:var(--art-ring)" stroke-width="1"/>
 
-            <!-- Rising sun and swoosh horizon -->
-            <g class="art-sun">
-              <circle cx="410" cy="92" r="34" fill="url(#g-sun)"/>
-              <g stroke="#f39a55" stroke-width="5" stroke-linecap="round">
-                <path d="M410 36v-12M370 52l-8-8M450 52l8-8M354 92h-12M466 92h12"/>
-              </g>
-            </g>
-            <path d="M40 360c40 90 150 130 250 125 100-5 180-60 205-130-45 55-120 90-210 92C190 450 90 420 40 360z" style="fill:var(--swoosh-blue)" opacity="0.95"/>
-            <path d="M85 430c50 40 120 58 190 55 70-3 130-25 165-60-45 25-100 38-165 40-70 2-135-10-190-35z" style="fill:var(--swoosh-red)"/>
 
             <!-- Network lines -->
             <g style="stroke:var(--art-line)" stroke-width="2" stroke-dasharray="5 7" fill="none" class="art-lines">
@@ -209,6 +201,7 @@
             <g class="art-badge">
               <circle cx="374" cy="186" r="20" fill="#2f9d95"/>
               <path d="M365 186l6 6 12-12" stroke="#fff" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
             </g>
           </svg>
 
@@ -325,8 +318,46 @@
       </div>
     </section>
 
+    <!-- How we work: one track for employers, one for candidates -->
+    <section class="section" id="how-we-work">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How we work</p>
+          <h2>A simple, clear process</h2>
+        </div>
+        <div class="tracks">
+          <article class="track">
+            <div class="track-head">
+              <span class="track-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 10h.01M15 10h.01M9 13h.01M15 13h.01"/></svg></span>
+              <h3>For employers</h3>
+            </div>
+            <ol class="track-steps">
+              <li><strong>Understand your need</strong><span>The role, skills, team and culture you are hiring for.</span></li>
+              <li><strong>Shortlist</strong><span>Screened candidates who fit the role.</span></li>
+              <li><strong>Interviews</strong><span>We coordinate interviews and feedback.</span></li>
+              <li><strong>Placement</strong><span>The right person joins your team.</span></li>
+            </ol>
+            <button type="button" class="btn" data-open-vacancy>Share a vacancy<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </article>
+          <article class="track track-candidate">
+            <div class="track-head">
+              <span class="track-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span>
+              <h3>For candidates</h3>
+            </div>
+            <ol class="track-steps">
+              <li><strong>Share your profile</strong><span>Send your candidate summary and resume.</span></li>
+              <li><strong>Role match</strong><span>We match you with suitable openings.</span></li>
+              <li><strong>Interview preparation</strong><span>Guidance before you meet the employer.</span></li>
+              <li><strong>Offer</strong><span>Support through to your offer.</span></li>
+            </ol>
+            <a href="#careers" class="btn btn-ghost">Send your profile<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Mission & Goal -->
-    <section class="section">
+    <section class="section section-alt">
       <div class="container mg-grid">
         <article class="mg-card mg-mission">
           <p class="eyebrow">Our mission</p>
@@ -350,6 +381,42 @@
       </div>
     </section>
 
+    <!-- Testimonials: DRAFT wording — each person must approve their quote before this is published -->
+    <section class="section" id="testimonials" hidden>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Testimonials</p>
+          <h2>What people say about us</h2>
+        </div>
+        <div class="t-grid">
+          <figure class="t-card">
+            <svg class="t-quote" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 8C7.5 9.5 4 13.5 4 19v5h9v-9H8.5c.4-3 2.3-5 5.2-6zM28 8c-5.5 1.5-9 5.5-9 11v5h9v-9h-4.5c.4-3 2.3-5 5.2-6z"/></svg>
+            <blockquote>Sri Guru HR Consultants took the time to understand our requirements and our culture before sharing any profiles. The candidates they recommended were well matched to the role, and the process was quick and professional throughout.</blockquote>
+            <figcaption>
+              <span class="t-avatar" style="background:#4fa3e0">SR</span>
+              <span><strong>Shankar Rampalli</strong><span>GlobalData</span></span>
+            </figcaption>
+          </figure>
+          <figure class="t-card t-accent">
+            <svg class="t-quote" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 8C7.5 9.5 4 13.5 4 19v5h9v-9H8.5c.4-3 2.3-5 5.2-6zM28 8c-5.5 1.5-9 5.5-9 11v5h9v-9h-4.5c.4-3 2.3-5 5.2-6z"/></svg>
+            <blockquote>From the first conversation, the team understood what I was looking for in my career. Their guidance was honest and practical, and they kept me informed at every step. I would gladly recommend them.</blockquote>
+            <figcaption>
+              <span class="t-avatar" style="background:#5ec2bb">SM</span>
+              <span><strong>Sri Mouni</strong><span>Oracle</span></span>
+            </figcaption>
+          </figure>
+          <figure class="t-card">
+            <svg class="t-quote" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 8C7.5 9.5 4 13.5 4 19v5h9v-9H8.5c.4-3 2.3-5 5.2-6zM28 8c-5.5 1.5-9 5.5-9 11v5h9v-9h-4.5c.4-3 2.3-5 5.2-6z"/></svg>
+            <blockquote>What stood out was how responsive and approachable they were. They listened carefully, gave clear advice and followed through on everything they promised. A dependable partner to work with.</blockquote>
+            <figcaption>
+              <span class="t-avatar" style="background:#f39a55">AK</span>
+              <span><strong>Akhil</strong><span>Broadridge</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- Careers: candidates send their resume by email or WhatsApp -->
     <section class="section section-alt" id="careers">
       <div class="container careers-grid">
@@ -361,35 +428,58 @@
             resume with us and we will get in touch when a suitable role comes up.
           </p>
           <ol class="resume-steps">
-            <li><span>1</span>Fill in your name and the role you are looking for.</li>
-            <li><span>2</span>Choose email or WhatsApp. Your message opens ready to send.</li>
-            <li><span>3</span>Attach your resume (PDF or Word) and press send.</li>
+            <li><span>1</span>Fill in the candidate summary.</li>
+            <li><span>2</span>Attach your resume (PDF or Word).</li>
+            <li><span>3</span>Press Submit. Or send it on WhatsApp if you prefer.</li>
           </ol>
         </div>
 
         <form class="resume-card" id="resume-form" novalidate>
-          <h3>Send us your resume</h3>
+          <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <h3>Candidate summary</h3>
+          <p class="form-hint">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+          <label>Name *<input type="text" name="name" autocomplete="name" required /></label>
           <div class="field-row">
-            <label>Full name<input type="text" name="name" autocomplete="name" required /></label>
-            <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+            <label>Mobile number *<input type="tel" name="mobile" autocomplete="tel" required /></label>
+            <label>E-mail<input type="email" name="email" autocomplete="email" /></label>
           </div>
           <div class="field-row">
-            <label>Role you are looking for<input type="text" name="role" placeholder="e.g. HR Executive" required /></label>
-            <label>Experience
-              <select name="experience">
-                <option>Fresher</option>
-                <option>1–3 years</option>
-                <option>3–7 years</option>
-                <option>7–12 years</option>
-                <option>12+ years</option>
+            <label>Position &amp; department *<input type="text" name="position" placeholder="e.g. HR Executive – Human Resources" required /></label>
+            <label>Qualification<input type="text" name="qualification" placeholder="e.g. MBA (HR)" /></label>
+          </div>
+          <div class="field-row">
+            <label>Total experience<input type="text" name="experience" placeholder="e.g. 6 years" /></label>
+            <label>Notice period
+              <select name="notice">
+                <option>Immediate</option>
+                <option>15 days</option>
+                <option selected>30 days</option>
+                <option>60 days</option>
+                <option>90 days</option>
               </select>
             </label>
           </div>
-          <div class="resume-actions">
-            <button type="button" class="btn btn-whatsapp" data-send="whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1112 20.5a8.6 8.6 0 01-4.3-1.2z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a4.5 4.5 0 01-2.3-2.3l.9-1-1-2z"/></svg>WhatsApp resume</button>
-            <button type="button" class="btn btn-ghost" data-send="email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email resume</button>
+          <label>Present organisation &amp; location<input type="text" name="present_org" placeholder="e.g. ABC Industries, Hyderabad" /></label>
+          <label>Previous organisations &amp; locations<textarea name="previous_orgs" rows="2" placeholder="One per line, e.g. XYZ Ltd, Pune (2018–2021)"></textarea></label>
+          <div class="field-row">
+            <label>Present CTC<input type="text" name="ctc_present" placeholder="e.g. ₹6 LPA" /></label>
+            <label>Expected CTC<input type="text" name="ctc_expected" placeholder="e.g. ₹8 LPA" /></label>
           </div>
-          <p class="form-note" role="status">Remember to attach your resume before sending.</p>
+          <label>Languages known<input type="text" name="languages" placeholder="e.g. Telugu, Hindi, English" /></label>
+          <label>Present role / skills summary<textarea name="skills" rows="3" placeholder="Your current responsibilities and key skills"></textarea></label>
+          <label class="file-field">Resume (PDF or Word, max 5 MB) *
+            <input type="file" name="resume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+          </label>
+          <label class="check-field">
+            <input type="checkbox" name="consent" value="yes" />
+            <span>I agree that Sri Guru HR Consultants may store my details and resume to contact me about suitable job opportunities.</span>
+          </label>
+          <div class="resume-actions">
+            <button type="button" class="btn" data-send="online"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>Submit application</button>
+            <button type="button" class="btn btn-whatsapp" data-send="whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1112 20.5a8.6 8.6 0 01-4.3-1.2z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a4.5 4.5 0 01-2.3-2.3l.9-1-1-2z"/></svg>WhatsApp instead</button>
+          </div>
+          <p class="privacy-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Your details are used only to contact you about suitable roles.</p>
+          <p class="form-note" role="status">Submit uploads your resume securely. On WhatsApp, remember to attach it yourself.</p>
         </form>
       </div>
     </section>
@@ -423,7 +513,14 @@
             <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=KPHB+Colony+Hyderabad+500072" target="_blank" rel="noopener">View on Google Maps &rarr;</a>
           </div>
 
-          <form class="contact-form" id="contact-form" novalidate>
+          <div class="contact-forms">
+            <div class="form-tabs" role="tablist" aria-label="Type of enquiry">
+              <button type="button" role="tab" id="tab-enquiry" aria-selected="true" aria-controls="contact-form">General enquiry</button>
+              <button type="button" role="tab" id="tab-vacancy" aria-selected="false" aria-controls="vacancy-form" tabindex="-1">Share a vacancy</button>
+            </div>
+
+          <form class="contact-form" id="contact-form" role="tabpanel" aria-labelledby="tab-enquiry" novalidate>
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="field-row">
               <label>Name<input type="text" name="name" autocomplete="name" required /></label>
               <label>Company<input type="text" name="company" autocomplete="organization" /></label>
@@ -443,11 +540,39 @@
             </label>
             <label>Message<textarea name="message" rows="4" required></textarea></label>
             <div class="form-actions">
+              <button type="button" class="btn" data-send="online"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>Send</button>
               <button type="button" class="btn btn-whatsapp" data-send="whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1112 20.5a8.6 8.6 0 01-4.3-1.2z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a4.5 4.5 0 01-2.3-2.3l.9-1-1-2z"/></svg>Send on WhatsApp</button>
-              <button type="button" class="btn btn-ghost" data-send="email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Send by email</button>
             </div>
-            <p class="form-note" role="status">Your enquiry opens in WhatsApp or your email app, ready to send.</p>
+            <p class="form-note" role="status">Send it to us directly, or on WhatsApp.</p>
           </form>
+
+          <form class="contact-form" id="vacancy-form" role="tabpanel" aria-labelledby="tab-vacancy" novalidate hidden>
+            <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <p class="form-hint">Tell us about the role. Fields marked * are required.</p>
+            <div class="field-row">
+              <label>Company name *<input type="text" name="company" autocomplete="organization" required /></label>
+              <label>Contact person *<input type="text" name="name" autocomplete="name" required /></label>
+            </div>
+            <div class="field-row">
+              <label>Mobile number *<input type="tel" name="mobile" autocomplete="tel" required /></label>
+              <label>E-mail<input type="email" name="email" autocomplete="email" /></label>
+            </div>
+            <div class="field-row">
+              <label>Position / role *<input type="text" name="role" placeholder="e.g. Production Supervisor" required /></label>
+              <label>Number of openings<input type="number" name="openings" min="1" value="1" /></label>
+            </div>
+            <div class="field-row">
+              <label>Job location<input type="text" name="location" placeholder="e.g. Patancheru, Hyderabad" /></label>
+              <label>Experience needed<input type="text" name="experience" placeholder="e.g. 3–5 years" /></label>
+            </div>
+            <label>Requirements / notes<textarea name="notes" rows="3" placeholder="Key skills, qualification, salary range, joining timeline"></textarea></label>
+            <div class="form-actions">
+              <button type="button" class="btn" data-send="online"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>Send</button>
+              <button type="button" class="btn btn-whatsapp" data-send="whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1112 20.5a8.6 8.6 0 01-4.3-1.2z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a4.5 4.5 0 01-2.3-2.3l.9-1-1-2z"/></svg>Send on WhatsApp</button>
+            </div>
+            <p class="form-note" role="status">Send the details to us directly, or on WhatsApp.</p>
+          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -473,6 +598,7 @@
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
