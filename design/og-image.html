@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<!-- Source for assets/og-image.jpg (1200x630 link-preview image).
+     Re-render: open in a 1200x630 window and screenshot, then save as JPG. -->
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;overflow:hidden;font-family:"Plus Jakarta Sans",Arial,sans-serif;color:#fff;position:relative;padding:72px 80px;
+background:radial-gradient(circle at 88% 12%,rgba(79,163,224,.35),transparent 40%),linear-gradient(140deg,#173f73 0%,#2468a8 58%,#2a8f88 100%)}
+.ghost{position:absolute;right:-90px;bottom:-120px;width:520px;height:412px;opacity:.09;filter:brightness(0) invert(1)}
+.brand{display:flex;align-items:center;gap:20px}
+.brand svg{width:124px;height:98px}
+.name{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:46px;line-height:1}
+.sub{margin-top:8px;font-size:15px;font-weight:700;letter-spacing:.32em;color:#f7ae6c}
+h1{margin-top:58px;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:64px;line-height:1.1;letter-spacing:-.02em;max-width:900px}
+h1 em{color:#9fd3f7}
+.tag{margin-top:22px;font-size:24px;color:#c9d6f2}
+.foot{position:absolute;left:80px;right:80px;bottom:56px;display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:600}
+.chips{display:flex;gap:10px}
+.chips span{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-size:17px}
+.ph{color:#f7ae6c}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+    <path id="sg-body-c" d="M38 63C38 44 42.5 36.8 50 36.8S62 44 62 63z"/>
+    <path id="sg-body-l" d="M19 63C19 50 24 44 31.8 44S44.6 50 44.6 63z"/>
+    <path id="sg-body-r" d="M55.4 63.5C55.4 50 60 44 67.4 44S79.6 50 79.6 58.5z"/>
+    <path id="sg-band" d="M16.8 53.2C9.5 56.8 8.5 63 20 66.2C33 69.6 60 67.8 74 61.2C81 57.8 86 52 89.4 43.8L86.4 42.1C82 51 77 55.6 70 58.6C57 63.8 33 64.2 22 62.2C15 60.8 12.8 57.3 16.8 53.2z"/>
+    <mask id="sg-gap-center" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff"/>
+      <use href="#sg-body-l" fill="#000" stroke="#000" stroke-width="2.6"/>
+      <use href="#sg-body-r" fill="#000" stroke="#000" stroke-width="2.6"/>
+    </mask>
+    <mask id="sg-gap-band" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <rect width="100" height="100" fill="#fff"/>
+      <use href="#sg-band" fill="#000" stroke="#000" stroke-width="3"/>
+    </mask>
+    </defs>
+    <symbol id="mark" viewBox="7 17 91 72">
+    <g mask="url(#sg-gap-band)">
+      <g mask="url(#sg-gap-center)" fill="#4fa3e0">
+        <circle cx="49.6" cy="27.4" r="8.3"/>
+        <use href="#sg-body-c"/>
+      </g>
+      <circle cx="32.3" cy="36.4" r="7.3" fill="#5ec2bb"/>
+      <use href="#sg-body-l" fill="#5ec2bb"/>
+      <circle cx="67.6" cy="36.4" r="7.3" fill="#f7ae6c"/>
+      <use href="#sg-body-r" fill="#f7ae6c"/>
+      <path fill-rule="evenodd" fill="#4fa3e0" d="M12.5 65C30 69.5 55 70 70 66.5C78 64 83 59 87 59.2C89.6 59.4 89 63 85.5 66.5C78 74.5 66 84.5 48 86C30 87 16 77.5 12.5 65zM51 76C58 70.8 65 69.2 72.5 69.8C65 71.4 58 73.2 51 76z"/>
+    </g>
+    <use href="#sg-band" fill="#f39a55"/>
+    <path d="M95.5 35.3L84.4 41.6L95 47.6z" fill="#f39a55"/>
+    </symbol>
+  </svg>
+<svg class="ghost"><use href="#mark"/></svg>
+<div class="brand"><svg><use href="#mark"/></svg><div><div class="name">Sri Guru</div><div class="sub">HR CONSULTANTS</div></div></div>
+<h1>The right person, in the right job, <em>at the right time.</em></h1>
+<p class="tag">Specialists in workforce optimisation · Hyderabad</p>
+<div class="foot"><div class="chips"><span>Recruitment</span><span>Staffing</span><span>Training</span><span>Compliance</span><span>OD Interventions</span></div><div class="ph">81250 14466</div></div>
+</body></html>

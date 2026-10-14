@@ -14,6 +14,7 @@ Static website for Sri Guru HR Consultants, Hyderabad — *Specialists in workfo
 | `js/config.js` | Supabase Project URL and anon key (public values) |
 | `supabase/` | Database schema and the `submit` Edge Function (stores forms, uploads resumes, emails via Resend) |
 | `business-card/` | Visiting card design and print PDF (not part of the website) |
+| `design/og-image.html` | Source for the link-preview image `assets/og-image.jpg` |
 
 ## Run locally
 
