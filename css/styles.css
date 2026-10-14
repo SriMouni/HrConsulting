@@ -657,6 +657,19 @@ p { margin: 0 0 1em; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 6px; }
 .footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; padding: 6px 12px; border-radius: 999px; }
 .footer-nav a:hover { color: var(--heading); background: var(--surface); }
+.contact-list svg.icon-fill, .social-link svg { fill: currentColor; stroke: none; }
+.contact-list svg.icon-fill { color: var(--gold); }
+.social-link {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: #0a66c2;
+  transition: background 0.2s, color 0.2s;
+}
+.social-link:hover { background: #0a66c2; color: #fff; }
+.social-link svg { width: 18px; height: 18px; }
 .copyright { width: 100%; margin: 6px 0 0; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
 
 /* Keyboard focus */
