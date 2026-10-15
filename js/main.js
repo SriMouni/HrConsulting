@@ -16,6 +16,12 @@ themeToggle.addEventListener("click", () => {
 
 updateThemeLabel();
 
+// Dock the header to the top edge once the page is scrolled
+const header = document.querySelector(".site-header");
+const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 12);
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
 // Mobile navigation
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.getElementById("site-nav");
@@ -211,6 +217,7 @@ Object.entries(forms).forEach(([id, config]) => {
         if (result.ok) {
           form.reset();
           note.textContent = config.success;
+          form.dispatchEvent(new CustomEvent("sent"));
         } else {
           note.textContent = result.error || "Sorry, that didn't send. Please try WhatsApp, or call 81250 14466.";
           note.classList.add("error");
@@ -233,33 +240,73 @@ Object.entries(forms).forEach(([id, config]) => {
   );
 });
 
-// Contact tabs: general enquiry / share a vacancy
-const tabs = [...document.querySelectorAll('.form-tabs [role="tab"]')];
+// Popups: candidate summary (two steps) and share a vacancy
+function setupDialog(dialog, openSelector, onOpen) {
+  const form = dialog.querySelector("form");
+  const note = form.querySelector(".form-note");
+  const done = form.querySelector(".apply-done");
+  const body = form.querySelectorAll(".apply-step, .dialog-body");
 
-function selectTab(tab) {
-  tabs.forEach((t) => {
-    const selected = t === tab;
-    t.setAttribute("aria-selected", String(selected));
-    t.tabIndex = selected ? 0 : -1;
-    document.getElementById(t.getAttribute("aria-controls")).hidden = !selected;
+  document.querySelectorAll(openSelector).forEach((button) =>
+    button.addEventListener("click", () => {
+      done.hidden = true;
+      note.textContent = "";
+      note.classList.remove("error");
+      if (onOpen) onOpen();
+      else body.forEach((el) => (el.hidden = false));
+      dialog.showModal();
+      form.querySelector(".dialog-body input:not([name='botcheck']), .apply-step:not([hidden]) input")?.focus();
+    })
+  );
+  dialog.querySelectorAll("[data-close-dialog]").forEach((button) =>
+    button.addEventListener("click", () => dialog.close())
+  );
+  // Clicking the dimmed backdrop closes the popup
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
   });
+  // After a successful send, swap the form for the thank-you panel
+  form.addEventListener("sent", () => {
+    body.forEach((el) => (el.hidden = true));
+    note.textContent = "";
+    done.hidden = false;
+  });
+  return form;
 }
 
-tabs.forEach((tab, i) => {
-  tab.addEventListener("click", () => selectTab(tab));
-  tab.addEventListener("keydown", (event) => {
-    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
-    const next = tabs[(i + (event.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
-    selectTab(next);
-    next.focus();
-  });
-});
+const vacancyDialog = document.getElementById("vacancy-dialog");
+if (vacancyDialog) setupDialog(vacancyDialog, "[data-open-vacancy]");
 
-// "Share a vacancy" buttons jump to the contact card with the vacancy tab open
-document.querySelectorAll("[data-open-vacancy]").forEach((button) =>
-  button.addEventListener("click", () => {
-    selectTab(document.getElementById("tab-vacancy"));
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-    document.querySelector('#vacancy-form [name="company"]').focus({ preventScroll: true });
-  })
-);
+const applyDialog = document.getElementById("apply-dialog");
+if (applyDialog) {
+  const applyForm = applyDialog.querySelector("form");
+  const applyNote = applyForm.querySelector(".form-note");
+  const steps = applyForm.querySelectorAll(".apply-step");
+  const dots = applyForm.querySelectorAll("[data-dot]");
+
+  const showStep = (n) => {
+    steps.forEach((step) => (step.hidden = step.dataset.step !== String(n)));
+    dots.forEach((dot) => dot.classList.toggle("active", Number(dot.dataset.dot) <= n));
+    applyNote.textContent = "";
+    applyNote.classList.remove("error");
+    applyForm.querySelector(`[data-step="${n}"] input, [data-step="${n}"] textarea`)?.focus();
+  };
+
+  setupDialog(applyDialog, "[data-open-apply]", () => showStep(1));
+
+  applyForm.querySelector("[data-step-next]").addEventListener("click", () => {
+    let valid = true;
+    applyForm.querySelectorAll('[data-step="1"] input').forEach((field) => {
+      const ok = field.checkValidity() && (!field.required || field.value.trim() !== "");
+      field.classList.toggle("invalid", !ok);
+      if (!ok) valid = false;
+    });
+    if (!valid) {
+      applyNote.textContent = "Please fill in your name, mobile number and the position you are applying for.";
+      applyNote.classList.add("error");
+      return;
+    }
+    showStep(2);
+  });
+  applyForm.querySelector("[data-step-back]").addEventListener("click", () => showStep(1));
+}
