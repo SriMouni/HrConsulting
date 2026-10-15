@@ -1,21 +1,3 @@
-// Theme toggle (initial theme is set by the inline script in <head>)
-const root = document.documentElement;
-const themeToggle = document.querySelector(".theme-toggle");
-
-function updateThemeLabel() {
-  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  themeToggle.setAttribute("aria-label", `Switch to ${next} theme`);
-}
-
-themeToggle.addEventListener("click", () => {
-  const theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  root.setAttribute("data-theme", theme);
-  try { localStorage.setItem("theme", theme); } catch (e) {}
-  updateThemeLabel();
-});
-
-updateThemeLabel();
-
 // Dock the header to the top edge once the page is scrolled
 const header = document.querySelector(".site-header");
 const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 12);

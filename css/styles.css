@@ -212,6 +212,9 @@ p { margin: 0 0 1em; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-name { font-family: var(--serif); font-weight: 600; font-size: 1.4rem; color: var(--heading); letter-spacing: -0.01em; }
 .brand-sub { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--accent); margin-top: 5px; }
+/* Top bar only: "HR CONSULTANTS" in red, slightly bolder */
+.site-header .brand-sub { color: #c8102e; font-weight: 800; font-size: 0.64rem; white-space: nowrap; }
+[data-theme="dark"] .site-header .brand-sub { color: #ff5a6e; }
 
 .site-nav { display: flex; align-items: center; gap: 6px; }
 .site-nav a {
@@ -831,29 +834,57 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--swoosh-blue); o
 
 @media (max-width: 640px) {
   .container { padding: 0 16px; }
-  .hero { padding: 86px 0 48px; }
+  .hero { padding: 104px 0 48px; }
   .site-header { top: 10px; width: calc(100% - 20px); }
   .site-header.scrolled { top: 4px; }
   .header-inner { height: 60px; padding: 0 8px 0 14px; gap: 8px; }
   .header-actions { gap: 6px; }
   .phone-chip { width: 42px; padding: 0; justify-content: center; }
   .phone-chip span { display: none; }
-  .hero-services { margin-top: 40px; justify-content: flex-start; }
-  .section { padding: 68px 0; }
+  /* Service chips: compact, wrapping onto a few lines */
+  .hero-services { margin-top: 36px; padding-top: 26px; gap: 6px; justify-content: center; border-top: 1px solid rgba(38, 114, 181, 0.25); }
+  .hero-services a { font-size: 0.74rem; padding: 3px 10px 3px 3px; gap: 6px; }
+  .hero-services .chip-icon { width: 22px; height: 22px; }
+  .hero-services .chip-icon svg { width: 14px; height: 14px; }
+
+  /* Overview picture: labels stay, just smaller */
+  .hero-visual { max-width: 340px; margin-top: 28px; }
+  .float-chip { font-size: 0.72rem; padding: 5px 10px 5px 5px; gap: 6px; border-radius: 12px; }
+  .float-chip .chip-icon { width: 24px; height: 24px; border-radius: 8px; }
+  .float-chip .chip-icon svg { width: 14px; height: 14px; }
+  .chip-1 { top: 6%; left: 0; }
+  .chip-2 { top: 6%; right: 0; }
+  .chip-3 { bottom: 4%; left: 50%; margin-left: -78px; }
+
+  /* Testimonials: swipe through the cards */
+  .t-grid {
+    display: flex;
+    gap: 14px;
+    margin: 0 -16px;
+    padding: 4px 16px 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+  }
+  .t-grid::-webkit-scrollbar { display: none; }
+  .t-card { flex: 0 0 86%; scroll-snap-align: start; }
+
+  .section { padding: 52px 0; }
+  .section-head { margin-bottom: 32px; }
+  .mg-card::after { font-size: 7rem; bottom: -24px; right: 14px; }
   .services-grid, .bento, .field-row { grid-template-columns: 1fr; }
   .b-wide { grid-column: auto; }
-  .service, .mg-card, .resume-card, .t-card { padding: 26px; }
+  .service, .mg-card, .resume-card, .t-card { padding: 22px; }
   .apply-card { padding: 26px; }
   .apply-dialog { width: 100%; max-width: 100%; max-height: 100%; height: 100%; margin: 0; border-radius: 0; }
   .apply-dialog .resume-card { max-height: 100%; height: 100%; border-radius: 0; border: 0; padding: 22px 18px; }
   .resume-actions .btn, .form-actions .btn { flex: 1 1 100%; justify-content: center; }
   .contact-info, .contact-forms { padding: 28px 22px; }
   .track { padding: 26px; }
-  .float-chip { font-size: 0.85rem; padding: 7px 12px 7px 7px; }
-  .chip-icon { width: 28px; height: 28px; }
-  .chip-2 { top: 13%; }
-  .chip-3 { margin-left: -80px; }
   .brand-mark { width: 46px; height: 36px; }
   .brand-name { font-size: 1.2rem; }
+  .site-header .brand-sub { font-size: 0.56rem; letter-spacing: 0.16em; }
+  .brand { gap: 7px; min-width: 0; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }

@@ -19,13 +19,6 @@ function toast(message) {
   toastTimer = setTimeout(() => (el.hidden = true), 3000);
 }
 
-// Theme toggle (shares the saved choice with the public site)
-$(".theme-toggle").addEventListener("click", () => {
-  const theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  document.documentElement.setAttribute("data-theme", theme);
-  try { localStorage.setItem("theme", theme); } catch (e) {}
-});
-
 if (!cfg.supabaseUrl || !cfg.supabaseAnonKey || !window.supabase) {
   show("screen-setup");
 } else {
