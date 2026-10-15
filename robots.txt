@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
-Sitemap: https://www.sriguruhrconsultants.com/sitemap.xml
+Sitemap: https://sriguruhrconsultants.com/sitemap.xml
