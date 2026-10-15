@@ -204,9 +204,8 @@ p { margin: 0 0 1em; }
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 16px; padding: 0 10px 0 20px; }
 .site-header { transition: top 0.25s ease, width 0.25s ease, border-radius 0.25s ease; }
-/* Once the page scrolls, the floating pill docks flush to the top edge */
-.site-header.scrolled { top: 0; width: 100%; border-radius: 0; border-width: 0 0 1px; }
-.site-header.scrolled .header-inner { max-width: 1180px; margin: 0 auto; }
+/* Once the page scrolls, the oval bar moves up to sit just under the top edge */
+.site-header.scrolled { top: 6px; }
 
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .brand-mark { width: 58px; height: 46px; }
@@ -834,7 +833,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--swoosh-blue); o
   .container { padding: 0 16px; }
   .hero { padding: 86px 0 48px; }
   .site-header { top: 10px; width: calc(100% - 20px); }
-  .site-header.scrolled { top: 0; width: 100%; }
+  .site-header.scrolled { top: 4px; }
   .header-inner { height: 60px; padding: 0 8px 0 14px; gap: 8px; }
   .header-actions { gap: 6px; }
   .phone-chip { width: 42px; padding: 0; justify-content: center; }
