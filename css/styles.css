@@ -543,7 +543,7 @@ p { margin: 0 0 1em; }
 .track-steps span { display: block; color: var(--muted); font-size: 0.93rem; margin-top: -2px; }
 
 /* Testimonials */
-.t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.t-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .t-card {
   margin: 0;
   display: flex;
