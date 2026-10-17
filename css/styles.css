@@ -543,7 +543,10 @@ p { margin: 0 0 1em; }
 .track-steps span { display: block; color: var(--muted); font-size: 0.93rem; margin-top: -2px; }
 
 /* Testimonials */
-.t-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+/* Five testimonials: two wide cards on top, three below */
+.t-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+.t-grid .t-card { grid-column: span 2; }
+.t-grid .t-card:nth-child(-n+2) { grid-column: span 3; }
 .t-card {
   margin: 0;
   display: flex;
@@ -803,6 +806,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--swoosh-blue); o
 /* Responsive */
 @media (max-width: 980px) {
   .hero-grid, .about-grid, .mg-grid, .contact-wrap, .careers-grid, .t-grid, .tracks { grid-template-columns: 1fr; }
+  .t-grid .t-card, .t-grid .t-card:nth-child(-n+2) { grid-column: auto; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .careers-grid > div:first-child { position: static; }
   .hero-visual { max-width: 520px; margin: 10px auto 0; width: 100%; }
